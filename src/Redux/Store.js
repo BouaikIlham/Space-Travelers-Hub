@@ -1,11 +1,15 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+
+import { combineReducers, createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
+import missionsReducer from './Missions/missions';
+import rocketsReducer from './Rockets/rockets';
 
-const reducer = combineReducers({
+
+const rootReducer = combineReducers({
+    missions: missionsReducer,
+    rockets: rocketsReducer,
 
 });
 
-const store = createStore(reducer, applyMiddleware(thunk, logger));
-
-export default store;
+export default createStore(rootReducer, applyMiddleware(thunk, logger));
