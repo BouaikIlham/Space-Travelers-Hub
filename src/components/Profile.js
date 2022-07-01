@@ -5,7 +5,7 @@ const Profile = () => {
   const rockets = useSelector((state) => state.rockets);
   const reservedRockets = rockets.filter((rocket) => rocket.reserved === true);
   const missions = useSelector((state) => state.missions).filter(
-    (mission) => mission.member === true
+    (mission) => mission.member === true,
   );
 
   return (
@@ -28,13 +28,11 @@ const Profile = () => {
           className={reservedRockets.length > 0 ? 'profile-rocket-div' : 'none'}
         >
           {reservedRockets.length > 0
-            ? reservedRockets.map((rocket) => {
-              return (
-                <p key={rocket.id} className="rocket-profile">
-                  {rocket.rocket_name}
-                </p>
-              );
-            })
+            ? reservedRockets.map((rocket) => (
+              <p key={rocket.id} className="rocket-profile">
+                {rocket.rocket_name}
+              </p>
+            ))
             : 'No rockets reserved'}
         </div>
       </div>

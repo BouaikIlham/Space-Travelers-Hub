@@ -8,7 +8,7 @@ describe('Header tests', () => {
     const header = render(
       <BrowserRouter>
         <Navbar />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
 
     expect(header).toMatchSnapshot();
@@ -18,14 +18,14 @@ describe('Header tests', () => {
     render(
       <BrowserRouter>
         <Navbar />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
 
     const missionsPage = screen.getByRole('link', { name: /Missions/i });
     fireEvent.click(missionsPage);
 
     expect(
-      screen.getByRole('heading', { name: /Space Travellers Hub/i })
+      screen.getByRole('heading', { name: /Space Travellers Hub/i }),
     ).toBeInTheDocument();
   });
 });

@@ -13,7 +13,7 @@ describe('Profile tests', () => {
           <Profile />
         </BrowserRouter>
         ,
-      </Provider>
+      </Provider>,
     );
 
     expect(profile).toMatchSnapshot();
@@ -26,11 +26,11 @@ describe('Profile tests', () => {
           <Profile />
         </BrowserRouter>
         ,
-      </Provider>
+      </Provider>,
     );
 
     expect(
-      screen.getByRole('heading', { name: /My Missions/i })
+      screen.getByRole('heading', { name: /My Missions/i }),
     ).toBeInTheDocument();
   });
 });
