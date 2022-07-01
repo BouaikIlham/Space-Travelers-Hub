@@ -1,26 +1,26 @@
-import './App.css';
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Navbar from './components/Navbar';
-import Missions from './components/Missions'
-import Rockets from './components/Rockets'
-import Profile from './components/Profile'
-import store from './Redux/Store';
+import Rockets from './components/Rockets';
+import Missions from './components/Missions';
+import Profile from './components/Profile';
+import store from './Redux/configStore';
 
-
-const App = () => {
+function App() {
   return (
-    <>
-      <Navbar />
+    <div className="app">
       <Provider store={store}>
-        <Routes>
-          <Route path='/Rockets' element={<Rockets />} />
-          <Route path='/Missions' element={<Missions />} />
-          <Route path='/Profile' element={<Profile />} />
-        </Routes>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Rockets />} />
+            <Route path="/missions" element={<Missions />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </Router>
       </Provider>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
