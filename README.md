@@ -7,7 +7,7 @@
 ## Built With
 
 - React
-- Readux
+- Redux
 - Library and Jest
 - GitFlow
 
